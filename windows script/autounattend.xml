@@ -161,7 +161,7 @@
             <Name>Admin</Name>
             <DisplayName>Admin</DisplayName>
             <Password>
-              <Value>rafaleINDIA@2011</Value>
+              <Value>YOUR_PASSWORD</Value>
               <PlainText>true</PlainText>
             </Password>
             <Group>Administrators</Group>
@@ -176,7 +176,7 @@
         <Enabled>true</Enabled>
         <Username>Admin</Username>
         <Password>
-          <Value>rafaleINDIA@2011</Value>
+          <Value>YOUR_PASSWORD</Value>
           <PlainText>true</PlainText>
         </Password>
         <LogonCount>1</LogonCount>
