@@ -4,20 +4,20 @@
 
 ![Windows 11](https://img.shields.io/badge/Windows-11%20Pro-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 ![Ventoy](https://img.shields.io/badge/Boot-Ventoy-green?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
+![Educational](https://img.shields.io/badge/Purpose-Educational-orange?style=for-the-badge)
 
 ---
 
-## ✨ Benefits :
+## ✨ Benefits
 
-- ✅ **Zero Manual Input** — No Next→Next→Next clicking
-- ✅ **No Microsoft Account** — To create a Local user account.
-- ✅ **Auto Partitioning** — C: (150GB) + D: (Remaining) automatic
-- ✅ **Auto User Creation** — Username & Password pre-set
-- ✅ **Skips All OOBE Screens** — EULA, Privacy, Cortana sab skip
-- ✅ **India Timezone Auto Set** — Manually nahi karna padta
-- ✅ **Seedha Desktop** — Install hote hi directly desktop milta hai
-- ✅ **Time Saving** — Manual install mein 30-40 min, yeh script sirf 15-20 min mein khatam
+- ✅ **Zero Manual Input** — No Next → Next → Next clicking required
+- ✅ **No Microsoft Account** — Creates a local user account directly
+- ✅ **Auto Partitioning** — C: (150GB) + D: (Remaining space) set automatically
+- ✅ **Auto User Creation** — Username & Password pre-configured
+- ✅ **Skips All OOBE Screens** — EULA, Privacy, Cortana all bypassed
+- ✅ **Auto Timezone Setup** — India Standard Time set automatically
+- ✅ **Boots Directly to Desktop** — No extra setup screens after install
+- ✅ **Time Saving** — Manual install takes 30–40 min; this script finishes in 15–20 min
 
 ---
 
@@ -26,29 +26,30 @@
 ```
 windows11-auto-install/
 │
-├── autounattend.xml        ← Main script (Important in root)
+├── autounattend.xml        ← Main script (must be placed in root)
 ├── ventoy/
 │   └── ventoy.json         ← Ventoy auto-install config
-└── README.md               ← Yeh file
+└── README.md               ← This file
 ```
 
 ---
 
 ## 🖥️ Disk Partition Layout
 
-| Partition | Type   | Size       | Label   |
-|-----------|--------|------------|---------|
-| EFI       | FAT32  | 260 MB     | System  |
-| MSR       | —      | 16 MB      | —       |
-| **C:**    | NTFS   | **150 GB** | Windows |
-| **D:**    | NTFS   | Remaining  | Data    |
+| Partition | Type  | Size       | Label   |
+|-----------|-------|------------|---------|
+| EFI       | FAT32 | 260 MB     | System  |
+| MSR       | —     | 16 MB      | —       |
+| **C:**    | NTFS  | **150 GB** | Windows |
+| **D:**    | NTFS  | Remaining  | Data    |
 
 ---
 
 ## 🚀 Step-by-Step Usage Guide
 
 ### 📋 Requirements
-- USB Drive / External HDD (minimum 8GB)
+
+- USB Drive or External HDD (minimum 8GB free space)
 - Windows 11 ISO → [Download here](https://www.microsoft.com/software-download/windows11)
 - Ventoy Software → [Download here](https://ventoy.net/en/download.html)
 
@@ -56,13 +57,13 @@ windows11-auto-install/
 
 ### Step 1 — Install Ventoy on External Drive
 
-1. External HDD / USB connect karo
-2. `Ventoy2Disk.exe` **Right Click → Run as Administrator**
-3. Device mein apna drive select karo
-4. `Option → Partition Style → GPT` select karo
-5. **Install** click karo → OK
+1. Connect your External HDD or USB Drive
+2. Right Click `Ventoy2Disk.exe` → **Run as Administrator**
+3. Select your drive from the Device dropdown
+4. Go to `Option → Partition Style → GPT`
+5. Click **Install** → OK
 
-> ⚠️ Drive ka sara data delete hoga — pehle backup lo!
+> ⚠️ All data on the drive will be erased — take a backup first!
 
 ---
 
@@ -71,12 +72,12 @@ windows11-auto-install/
 ```
 Ventoy Drive (E:\)
 ├── Win11_xxxx_English_x64.iso     ← Windows 11 ISO
-├── autounattend.xml                ← Is repo se
+├── autounattend.xml                ← From this repo (root level)
 └── ventoy\
-    └── ventoy.json                 ← Is repo se
+    └── ventoy.json                 ← From this repo
 ```
 
-> ⚠️ `ventoy.json` mein ISO ka naam apne ISO file ke naam se match karo!
+> ⚠️ Make sure the ISO filename in `ventoy.json` matches your actual ISO file name!
 
 ---
 
@@ -93,71 +94,89 @@ Ventoy Drive (E:\)
 }
 ```
 
-Replace `YOUR_ISO_FILENAME.iso` with your actual ISO filename.
+Replace `YOUR_ISO_FILENAME.iso` with your actual ISO file name.
 
 ---
 
 ### Step 4 — Boot from External Drive
 
-1. External Drive connected rakho
-2. PC Restart karo
-3. Boot Menu kholo:
+1. Keep the External Drive connected
+2. Restart your PC
+3. Open Boot Menu using the key for your brand:
 
-| Brand  | Key  |
-|--------|------|
-| Dell   | F12  |
-| HP     | F9   |
-| Asus   | F8   |
-| Lenovo | F12  |
-| Acer   | F12  |
-| MSI    | F11  |
+| Brand  | Key |
+|--------|-----|
+| Dell   | F12 |
+| HP     | F9  |
+| Asus   | F8  |
+| Lenovo | F12 |
+| Acer   | F12 |
+| MSI    | F11 |
 
-4. External Drive select karo
-5. Ventoy Menu → **Windows 11 ISO** select karo → **Normal Boot**
+4. Select your External Drive
+5. In Ventoy Menu → Select **Windows 11 ISO** → Choose **Normal Boot**
 
 ---
 
 ### Step 5 — Sit Back & Relax ☕
 
-Installation fully automatic hai — kuch bhi click nahi karna!
+The installation is fully automatic — no input required!
 
-| Phase               | Time        |
-|---------------------|-------------|
-| Disk Partitioning   | ~1 min      |
-| Windows Install     | ~10-15 min  |
-| First Boot + Setup  | ~3-5 min    |
-| **Total**           | **~20 min** |
+| Phase              | Estimated Time |
+|--------------------|----------------|
+| Disk Partitioning  | ~1 min         |
+| Windows Install    | ~10–15 min     |
+| First Boot + Setup | ~3–5 min       |
+| **Total**          | **~20 min**    |
 
 ---
 
 ## ⚙️ Default Configuration
 
-| Setting       | Value                  |
-|---------------|------------------------|
-| Username      | `Admin`                |
-| Password      | *(set by user)*        |
-| Computer Name | `MyPC`                 |
-| Timezone      | India Standard Time    |
-| C: Drive      | 150 GB                 |
-| D: Drive      | Remaining Space        |
-| Account Type  | Local Administrator    |
+| Setting       | Value               |
+|---------------|---------------------|
+| Username      | `Set by user`       |
+| Password      | `Set by user`       |
+| Computer Name | `MyPC`              |
+| Timezone      | India Standard Time |
+| C: Drive      | 150 GB              |
+| D: Drive      | Remaining Space     |
+| Account Type  | Local Administrator |
 
-> 🔐 ** TO Customize ** `autounattend.xml` mein yeh fields badlo:
-> - `<Name>` — Username
-> - `<Value>` — Password  
-> - `<ComputerName>` — PC Name
+### 🔐 To Customize — Edit these fields in `autounattend.xml`:
 
+```xml
+<Name>YourUsername</Name>           <!-- Change username -->
+<Value>YourPassword</Value>         <!-- Change password -->
+<ComputerName>YourPCName</ComputerName>  <!-- Change PC name -->
+```
+
+---
+
+## ⚠️ Important Notes
+
+- 🔑 **Product Key** — A generic key is used for installation. After install, activate Windows with your original key via `Settings → System → Activation`
+- 💾 **Disk 0 will be completely wiped** — Always backup your data before proceeding!
+- 🌐 **No Internet Required** — Installation works completely offline
+- 🔒 **Keep your credentials private** — Never share your edited `autounattend.xml` publicly with your real password inside
+
+---
+
+## 📄 Disclaimer
+
+This script is for **educational purposes only.**
+Windows is a product of Microsoft Corporation.
+Make sure you have a valid Windows license before use.
+This repository does not promote or support piracy in any form.
 
 ---
 
 ## 🤝 Contributing
 
-Pull requests welcome hai! Agar aapke paas improvements hain toh feel free to contribute.
+Pull requests are welcome! If you have improvements or suggestions, feel free to contribute.
 
 ---
 
-## 📄 License
-
-MIT License — Free to use, modify and share!
-
----
+<div align="center">
+  <b>⭐ If this helped you, don't forget to leave a Star! ⭐</b>
+</div>
